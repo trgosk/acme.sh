@@ -69,6 +69,9 @@ dns_websupport_rm() {
   fulldomain=$1
   txtvalue=$2
 
+  WS_ApiKey="${WS_ApiKey:-$(_readaccountconf_mutable WS_ApiKey)}"
+  WS_ApiSecret="${WS_ApiSecret:-$(_readaccountconf_mutable WS_ApiSecret)}"
+
   _debug2 fulldomain "$fulldomain"
   _debug2 txtvalue "$txtvalue"
 
